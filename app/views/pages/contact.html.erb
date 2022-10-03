@@ -4,7 +4,7 @@
 <ul>
   <% @members.each do |member| %>
     <li>
-      <%= member.capitalize %>
+      <%= member[:first].capitalize %> <%= member[:last].capitalize %>
     </li>
   <% end %>
 </ul>
@@ -12,9 +12,15 @@
 <form action="/contact" method="get">
   <input
     type="text"
-    name="member"
+    name="first"
     placeholder="Who are you looking for?"
-    value="<%= params[:member] %>"
+    value="<%= params[:first] %>"
+  >
+  <input
+    type="text"
+    name="last"
+    placeholder="Who are you looking for?"
+    value="<%= params[:last] %>"
   >
   <input type="submit">
 </form>
