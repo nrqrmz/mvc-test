@@ -6,5 +6,6 @@ class PagesController < ApplicationController
   end
 
   def contact
+    @members = %w[alex betty cindy diane eric]
   end
 end
